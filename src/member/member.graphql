@@ -1,0 +1,18 @@
+type Member {
+    id: Int!
+}
+input CreateMemberInput {
+    email: String!
+    password: String!
+}
+
+type Query {
+    findMembers: [Member]!
+    findMember(id: Int!): Member
+    isValidToken(token: String!): Boolean
+}
+
+type Mutation {
+    createMember(input: CreateMemberInput!): String
+    removeMember(id: Int!): Member
+}
